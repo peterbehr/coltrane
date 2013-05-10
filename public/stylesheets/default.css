@@ -1,0 +1,111 @@
+/***
+
+Biblioteka
+Version 0
+Peter Behr made this
+http://peterbehr.net
+
+***/
+
+
+
+/* BEGIN general classes */
+
+/* positioning and text alignment */
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.center { margin-left: auto; margin-right: auto; }
+.baseline { vertical-align: baseline; }
+.middle { vertical-align: middle; }
+.text_justify { text-align: justify; }
+.text_center { text-align: center; }
+.text_left { text-align: left; }
+.text_right { text-align: right; }
+
+/* dimensions */
+
+.zero { width: 0px; height: 0px; }
+
+/* display */
+
+.block { display: block; }
+.inline { display: inline; }
+.hidden { display: none; }
+
+/* type */
+
+.biggest { font-size: 36px; }
+.bigger { font-size: 24px; }
+.big { font-size: 18px; }
+.medium { font-size: 14px; }
+.small { font-size: 12px; }
+.smaller { font-size: 10px; }
+.smallest { font-size: 8px; }
+.lightest { font-weight: 100; }
+.light { font-weight: 200; }
+.normal { font-weight: 400; }
+.bold { font-weight: 600; }
+.bolder { font-weight: 800; }
+.boldest { font-weight: 900; }
+.italic { font-style: italic; }
+.roman {font-style: normal; }
+.underline { text-decoration: underline; }
+.plain { text-decoration: none; }
+
+/* colors */
+
+.white { color: #ffffff; }
+.white_off { color: #f0f0f0; }
+.gray_lightest { color: #e0e0e0; }
+.gray_lighter { color: #d0d0d0; }
+.gray_light { color: #b0b0b0; }
+.gray { color: #909090; }
+.gray_dark { color: #707070; }
+.gray_darker { color: #505050; }
+.gray_darkest { color: #202020; }
+.black { color: #000000; }
+.red { color: #ff9900; }
+.yellow { color: #ffcc33; }
+.blue { color: #2b82ad; }
+
+/* END general classes */
+
+
+
+/* RGBA */
+
+background-color: rgba(0, 0, 0, 0.5);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000, endColorstr=#80000000);
+-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000, endColorstr=#80000000)';
+
+/* opacity */
+
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50);
+opacity: 0.5;
+
+/* background gradients */
+
+@mixin rgba_bg($color_obj, $color_str, $alpha_dec, $alpha_hex) {
+	$hash: '#';
+	background-color: none;
+	background-color: rgba(red($color_obj), green($color_obj), blue($color_obj), $alpha_dec);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$hash}#{$alpha_hex}#{$color_str}, endColorstr=#{$hash}#{$alpha_hex}#{$color_str});
+	-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=##{$alpha_hex}#{$color_str}, endColorstr=##{$alpha_hex}#{$color_str})';
+}
+
+@mixin rotate($degrees, $origin_x: 0%, $origin_y: 0%) {
+	-webkit-transform-origin: $origin_x $origin_y;
+	-moz-transform-origin: $origin_x $origin_y;
+	-ms-transform-origin: $origin_x $origin_y;
+	-o-transform-origin: $origin_x $origin_y;
+	transform-origin: $origin_x $origin_y;
+	-webkit-transform: rotate(#{$degrees}deg);
+	-moz-transform: rotate(#{$degrees}deg);
+	-ms-transform: rotate(#{$degrees}deg);
+	-o-transform: rotate(#{$degrees}deg);
+	transform: rotate(#{$degrees}deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$degrees / 90});
+}

@@ -1,6 +1,39 @@
 extends layout
 
 block content
-	h1 Welcome to #{title}
-	label hey
-	input(type="text")
+	.content.grid
+		// .row
+		// 	.column.w_6
+		// 		p Column
+		// 	.column.w_6
+		// 		p Column
+		// .row
+		// 	.column.w_3
+		// 		p Column
+		// 	.column.w_4
+		// 		p Column
+		// 	.column.w_2
+		// 		p Column
+		// 	.column.w_3
+		// 		p Column
+		// section
+		section.row.index_box
+			.column.background.w_12
+				img(src="/images/background_neuron.jpg")
+			.column.w_1
+			.column.w_4
+				// explanation
+				h1
+					span.translucent.dark 欢迎你更理解自己的性格。
+				h2
+					span.translucent.dark Coltrane是美国科学心理学家的科学项目。我们的目的是用真实的，受过验证的心理测试帮助好奇的人了解自己和身边的人。
+			.column.w_2
+			.column.w_4
+				// sign up
+				form
+					input(type="text", value="姓名")
+					input(type="text", value="邮箱地址")
+					input(type="text", value="选择密码")
+					input(type="submit", value="马上注册")
+			.column.w_1
+			

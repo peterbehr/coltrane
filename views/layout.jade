@@ -7,11 +7,28 @@ html
 		link(rel='stylesheet', href='/stylesheets/coltrane.css')
 		link(rel='stylesheet', href="http://fonts.googleapis.com/css?family=Roboto")
 	body
-		//ul.nav
-		//	li Item 1
-		//	li Item 2
-		//	li Item 3
-		.content
+		.blue
+			ul.nav.cleared
+				li.masthead Coltrane
+				ul.right.cleared
+					li 测验
+					li 关于
+					li 账户
 			block content
+		.footer
+			.content.grid
+				.row
+					.column.w_6 本应用程序于北京制造。
+					.column.w_3
+						ul
+							li 关于我们
+							li 联系我们
+							li 政策
+							li 私密
+					.column.w_3
+						ul
+							li Hey
+							li Hey
+							li Hey
 		script(src="http://code.jquery.com/jquery-latest.js", type="text/javascript")
 		script(src="javascripts/coltrane.js", type="text/javascript")
